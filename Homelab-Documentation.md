@@ -442,16 +442,7 @@ DNS=192.168.1.1
 | Documentation uploaded to GitHub | 🔲 Pending |
 | Screenshots added to documentation | 🔲 Pending |
 
----
 
-## Next Steps
-
-1. Upload this documentation to GitHub
-2. Add screenshots to all placeholder sections
-3. Install and configure Samba on UbuntuServer as domain member file server
-4. Update CV with GitHub link
-
----
 
 ## Network Plan
 
