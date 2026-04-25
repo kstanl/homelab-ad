@@ -155,12 +155,12 @@ Stored in: `C:\Homelab\ISOs\`
 - Global Catalog: Yes
 - DSRM password set
 
-> 📷 **Screenshot:** Review Options screen showing lab.local settings
-> `[Insert screenshot here]`
+>  **Screenshot:** Review Options screen showing lab.local settings
+> ![AD DS Role Selected](screenshots/06-adds-role-selected.png)
 
-> 📷 **Screenshot:** Server Manager showing AD DS and DNS roles (green)
-> `[Insert screenshot here]`
 
+>  **Screenshot:** Server Manager showing AD DS and DNS roles (green)
+> ![Server Manager Dashboard](screenshots/07-server-manager-dashboard.png)
 **Snapshot taken:** `DC01 - AD DS Complete`
 
 ---
@@ -182,8 +182,8 @@ Stored in: `C:\Homelab\ISOs\`
 - Password never expires: Yes
 - Must change at next logon: No
 
-> 📷 **Screenshot:** AD Users and Computers showing jdoe and jadoe
-> `[Insert screenshot here]`
+>  **Screenshot:** AD Users and Computers showing jdoe and jadoe
+> ![AD Users jdoe and jadoe](screenshots/08-ad-users-jdoe-jadoe.png)
 
 ---
 
@@ -195,8 +195,8 @@ Stored in: `C:\Homelab\ISOs\`
 - Gateway: `192.168.1.1`
 - DNS: `192.168.1.1`
 
-> 📷 **Screenshot:** DHCP Manager showing LabScope
-> `[Insert screenshot here]`
+>  **Screenshot:** DHCP Manager showing LabScope
+> ![DHCP LabScope](screenshots/09-dhcp-labscope.png)
 
 **Snapshot taken:** `DC01 - DHCP Complete`
 
@@ -222,11 +222,10 @@ Steps taken:
 6. Configured all four settings above
 7. Closed editor, right-clicked lab.local → Link an Existing GPO → selected Password Policy
 
-> 📷 **Screenshot:** Group Policy Management showing Password Policy linked to lab.local
-> `[Insert screenshot here]`
-
-> 📷 **Screenshot:** Password Policy settings in Group Policy Management Editor
-> `[Insert screenshot here]`
+>  **Screenshot:** Group Policy Management showing Password Policy linked to lab.local
+> ![GPO Password Policy Linked](screenshots/10-gpo-password-policy-linked.png)
+>  **Screenshot:** Password Policy settings in Group Policy Management Editor
+> ![GPO Password Policy Settings](screenshots/11-gpo-password-policy-settings.png)
 
 **Snapshot taken:** `DC01 - Password Policy GPO`
 
@@ -341,8 +340,8 @@ Set-ExecutionPolicy RemoteSigned -Force
 
 **Solution:** Set DNS to 192.168.1.1 (DC01). Domain join succeeded immediately after.
 
-> 📷 **Screenshot:** "Welcome to the lab.local domain" message
-> `[Insert screenshot here]`
+>  **Screenshot:** "Welcome to the lab.local domain" message
+> [Screenshot not available — taken during domain join process]
 
 ---
 
@@ -351,8 +350,8 @@ Set-ExecutionPolicy RemoteSigned -Force
 - Username: `LAB\jdoe` / Password: `User@12345`
 - Login successful ✅
 
-> 📷 **Screenshot:** WinClient desktop logged in as LAB\jdoe
-> `[Insert screenshot here]`
+>  **Screenshot:** WinClient desktop logged in as LAB\jdoe
+> ![WinClient jdoe Login](screenshots/15-winclient-jdoe-login.png)
 
 **Snapshot taken:** `WinClient - Domain Joined`
 
@@ -413,11 +412,11 @@ DNS=192.168.1.1
 
 **Verified:** `ping 192.168.1.1` from UbuntuServer → DC01 replies confirmed ✅
 
-> 📷 **Screenshot:** ip a showing 192.168.1.50/24 on enp0s3
-> `[Insert screenshot here]`
+>  **Screenshot:** ip a showing 192.168.1.50/24 on enp0s3
+> ![UbuntuServer Static IP](screenshots/16-ubuntuserver-static-ip.png)
 
-> 📷 **Screenshot:** ping 192.168.1.1 showing successful replies
-> `[Insert screenshot here]`
+>  **Screenshot:** ping 192.168.1.1 showing successful replies
+> ![UbuntuServer Ping DC01](screenshots/17-ubuntuserver-ping-dc01.png)
 
 **Snapshot taken:** `UbuntuServer - Static IP Complete`
 
