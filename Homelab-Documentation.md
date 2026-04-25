@@ -43,8 +43,7 @@ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
 **Result:** `Microsoft-Hyper-V-Hypervisor` → Disabled.
 
 >  **Screenshot:** PowerShell output showing Hyper-V Hypervisor = Disabled
-> `https://github.com/kstanl/homelab-ad/blob/main/screenshots/01-hyperv-disabled.png`
-
+> ![Hyper-V Disabled](screenshots/01-hyperv-disabled.png)
 ---
 
 ### Folder Structure Created
@@ -66,8 +65,8 @@ New-Item -ItemType Directory -Path "C:\Homelab\ISOs", "C:\Homelab\VMs", "C:\Home
 
 VirtualBox Default Machine Folder set to: `C:\Homelab\VMs`
 
-> 📷 **Screenshot:** File Explorer showing C:\Homelab folder structure
-> `[Insert screenshot here]`
+>  **Screenshot:** File Explorer showing C:\Homelab folder structure
+> ![Homelab Folder Structure](screenshots/02-homelab-folder-structure.png)
 
 ---
 
@@ -94,8 +93,8 @@ Stored in: `C:\Homelab\ISOs\`
 | Storage | 50 GB VDI (Dynamically allocated) |
 | Network Adapter | Internal Network — `LabNet` |
 
-> 📷 **Screenshot:** VirtualBox WinServer settings — Network tab showing Internal Network / LabNet
-> `[Insert screenshot here]`
+>  **Screenshot:** VirtualBox WinServer settings — Network tab showing Internal Network / LabNet
+> ![WinServer Network Settings](screenshots/03-winserver-network-settings.png)
 
 ---
 
@@ -116,8 +115,8 @@ Stored in: `C:\Homelab\ISOs\`
 
 **Solution:** Removed wrong role, installed correct AD DS role.
 
-> 📷 **Screenshot:** Windows Server 2022 Setup — edition selection (Desktop Experience)
-> `[Insert screenshot here]`
+>  **Screenshot:** Windows Server 2022 Setup — edition selection (Desktop Experience)
+> [Screenshot not available — taken during installation]
 
 **Snapshot taken:** `Fresh Install - No Config`
 
@@ -137,8 +136,8 @@ Stored in: `C:\Homelab\ISOs\`
 | Default Gateway | (blank) |
 | Preferred DNS | 127.0.0.1 |
 
-> 📷 **Screenshot:** IPv4 Properties showing static IP on DC01
-> `[Insert screenshot here]`
+> **Screenshot:** IPv4 Properties showing static IP on DC01
+> ![DC01 Static IP](screenshots/05-dc01-static-ip.png)
 
 ---
 
