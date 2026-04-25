@@ -270,7 +270,7 @@ Set-ExecutionPolicy RemoteSigned -Force
 ```
 
 > 📷 **Screenshot:** PowerShell output showing "Created user: amueller / bschmidt / cweber"
-> `[Insert screenshot here]`
+> ![PowerShell Script and CSV](screenshots/18-powershell-script-csv.png)
 
 ---
 
