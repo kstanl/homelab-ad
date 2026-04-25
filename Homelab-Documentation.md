@@ -291,7 +291,7 @@ Set-ExecutionPolicy RemoteSigned -Force
 | Video Memory | 128 MB |
 
 > 📷 **Screenshot:** VirtualBox WinClient settings — System tab showing TPM 2.0, UEFI, Secure Boot
-> `[Insert screenshot here]`
+> ![WinClient Desktop](screenshots/12-winclient-desktop.png)
 
 ---
 
@@ -316,8 +316,8 @@ Set-ExecutionPolicy RemoteSigned -Force
 
 **Solution:** Installed VirtualBox Guest Additions; changed adapter type to Intel PRO/1000 MT Desktop.
 
-> 📷 **Screenshot:** Windows 11 desktop after installation
-> `[Insert screenshot here]`
+> **Screenshot:** Windows 11 desktop after installation
+> [Screenshot not available — taken during domain join process]
 
 **Snapshot taken:** `WinClient - Fresh Install`
 
