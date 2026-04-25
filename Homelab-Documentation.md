@@ -42,8 +42,8 @@ Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
 
 **Result:** `Microsoft-Hyper-V-Hypervisor` → Disabled.
 
-> 📷 **Screenshot:** PowerShell output showing Hyper-V Hypervisor = Disabled
-> `[Insert screenshot here]`
+>  **Screenshot:** PowerShell output showing Hyper-V Hypervisor = Disabled
+> `https://github.com/kstanl/homelab-ad/blob/main/screenshots/01-hyperv-disabled.png`
 
 ---
 
