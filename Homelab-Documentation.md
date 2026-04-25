@@ -2,7 +2,7 @@
 **Project:** Windows Active Directory Lab  
 **Author:** Stanley Kafuko  
 **GitHub:** https://github.com/kstanl/homelab-ad  
-**Started:** 22 April 2026  
+**Started:**  January 2026  
 **Status:** In Progress
 
 ---
