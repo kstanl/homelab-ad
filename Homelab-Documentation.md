@@ -2,14 +2,14 @@
 **Project:** Windows Active Directory Lab  
 **Author:** Stanley Kafuko  
 **GitHub:** https://github.com/kstanl/homelab-ad  
-**Started:**  January 2026  
+**Started:**  Feb 2026  
 **Status:** In Progress
 
 ---
 
 ## Objective
 
-Build a functional home lab environment using VirtualBox to demonstrate Active Directory, DNS, DHCP, user authentication, Group Policy, PowerShell scripting, and Linux file server skills relevant to the Fachinformatiker Systemintegration (FiSi) Ausbildung.
+Build a functional home lab environment using VirtualBox to demonstrate Active Directory, DNS, DHCP, user authentication, Group Policy, and Linux file server skills relevant to the Fachinformatiker Systemintegration Ausbildung.
 
 ---
 
@@ -31,9 +31,9 @@ Build a functional home lab environment using VirtualBox to demonstrate Active D
 ### Hyper-V Disabled
 Hyper-V Hypervisor was disabled to give VirtualBox direct hardware access and avoid virtualization conflicts.
 
-**Problem encountered:** VirtualBox VMs were running slowly and unstably because Hyper-V was occupying hardware virtualization extensions.
+I noticed that the VirtualBox VMs were running slowly and unstably. i searched the possible reasons behind this and concluded that it was likely because Hyper-V was occupying hardware virtualization extensions.
 
-**Solution:** Disabled the Hyper-V Hypervisor via PowerShell:
+I decided to disable the Hyper-V Hypervisor via PowerShell:
 
 ```powershell
 bcdedit /set hypervisorlaunchtype off
@@ -59,9 +59,7 @@ C:\Homelab\
 New-Item -ItemType Directory -Path "C:\Homelab\ISOs", "C:\Homelab\VMs", "C:\Homelab\Docs"
 ```
 
-**Problem encountered:** Running `mkdir` with multiple paths in PowerShell 7 returned an error.
-
-**Solution:** Used `New-Item` instead.
+I noticed that running `mkdir` with multiple paths in PowerShell 7 returned an error and so i decided to  use `New-Item` instead.
 
 VirtualBox Default Machine Folder set to: `C:\Homelab\VMs`
 
@@ -91,9 +89,9 @@ Stored in: `C:\Homelab\ISOs\`
 | RAM | 2048 MB (2 GB) |
 | CPUs | 2 |
 | Storage | 50 GB VDI (Dynamically allocated) |
-| Network Adapter | Internal Network — `LabNet` |
+| Network Adapter | Internal Network - `LabNet` |
 
->  **Screenshot:** VirtualBox WinServer settings — Network tab showing Internal Network / LabNet
+>  **Screenshot:** VirtualBox WinServer settings - Network tab showing Internal Network / LabNet
 > ![WinServer Network Settings](screenshots/03-winserver-network-settings.png)
 
 ---
@@ -107,18 +105,12 @@ Stored in: `C:\Homelab\ISOs\`
 5. Set Administrator password
 6. Installation completed successfully
 
-**Problem encountered:** VirtualBox auto-attached an unattended UUID ISO instead of the correct ISO.
-
-**Solution:** Manually removed wrong ISO and attached `SERVER_EVAL_x64FRE_en-us.iso`.
-
-**Problem encountered:** Selected "Active Directory Certificate Services" instead of "Active Directory Domain Services."
-
-**Solution:** Removed wrong role, installed correct AD DS role.
+VirtualBox auto-attached an unattended UUID ISO instead of the correct ISO. I had to manually remove the wrong ISO and attached `SERVER_EVAL_x64FRE_en-us.iso`.
 
 >  **Screenshot:** Windows Server 2022 Setup — edition selection (Desktop Experience)
 > [Screenshot not available — taken during installation]
 
-**Snapshot taken:** `Fresh Install - No Config`
+**I took a Snapshot at this stage and named it:** `Fresh Install - No Config`
 
 ---
 
