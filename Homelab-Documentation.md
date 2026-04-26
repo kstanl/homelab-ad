@@ -98,11 +98,11 @@ Stored in: `C:\Homelab\ISOs\`
 
 ### Installation Steps
 
-1. Created VM in VirtualBox with above specifications
+1. Created VM in VirtualBox with the above specifications
 2. Attached `SERVER_EVAL_x64FRE_en-us.iso` to SATA controller
 3. Selected **Custom Install** during Windows Setup
 4. Installed to Drive 0 Unallocated Space (50 GB)
-5. Set Administrator password
+5. Set the Administrator password
 6. Installation completed successfully
 
 VirtualBox auto-attached an unattended UUID ISO instead of the correct ISO. I had to manually remove the wrong ISO and attached `SERVER_EVAL_x64FRE_en-us.iso`.
@@ -137,7 +137,7 @@ VirtualBox auto-attached an unattended UUID ISO instead of the correct ISO. I ha
 
 #### Installation
 - Role: **Active Directory Domain Services**
-- Installation succeeded on DC01
+- Installation was successful on DC01
 
 #### Promotion to Domain Controller
 - New forest: `lab.local`
@@ -151,9 +151,9 @@ VirtualBox auto-attached an unattended UUID ISO instead of the correct ISO. I ha
 > ![AD DS Role Selected](screenshots/06-adds-role-selected.png)
 
 
->  **Screenshot:** Server Manager showing AD DS and DNS roles (green)
+>  **Screenshot:** Server Manager showing AD DS and DNS roles
 > ![Server Manager Dashboard](screenshots/07-server-manager-dashboard.png)
-**Snapshot taken:** `DC01 - AD DS Complete`
+**I again decided to take a Snapshot at this stage. I named it :** `DC01 - AD DS Complete`
 
 ---
 
@@ -168,8 +168,8 @@ VirtualBox auto-attached an unattended UUID ISO instead of the correct ISO. I ha
 
 | Full Name | Logon Name | Password |
 |---|---|---|
-| John Doe | jdoe | User@12345 |
-| Jane Doe | jadoe | User@12345 |
+| John Doe | jdoe | User@123456 |
+| Jane Doe | jadoe | User@123456 |
 
 - Password never expires: Yes
 - Must change at next logon: No
@@ -190,7 +190,7 @@ VirtualBox auto-attached an unattended UUID ISO instead of the correct ISO. I ha
 >  **Screenshot:** DHCP Manager showing LabScope
 > ![DHCP LabScope](screenshots/09-dhcp-labscope.png)
 
-**Snapshot taken:** `DC01 - DHCP Complete`
+**Again i decided to take another Snapshot here and named it :** `DC01 - DHCP Complete`
 
 ---
 
@@ -203,7 +203,7 @@ Created and linked a **Password Policy** GPO to `lab.local`:
 | Minimum password length | 8 characters |
 | Password must meet complexity requirements | Enabled |
 | Maximum password age | 90 days |
-| Minimum password age | 1 day (suggested by wizard) |
+| Minimum password age | 30 days (suggested by wizard) |
 
 Steps taken:
 1. Opened Group Policy Management via Server Manager → Tools
@@ -219,7 +219,7 @@ Steps taken:
 >  **Screenshot:** Password Policy settings in Group Policy Management Editor
 > ![GPO Password Policy Settings](screenshots/11-gpo-password-policy-settings.png)
 
-**Snapshot taken:** `DC01 - Password Policy GPO`
+**Another Snapshot was taken:** `DC01 - Password Policy GPO`
 
 ---
 
@@ -252,16 +252,12 @@ Import-Csv "C:\users.csv" | ForEach-Object {
 }
 ```
 
-**Problem encountered:** German keyboard layout (QWERTZ) corrupted `$` characters when typing in Notepad inside the VM, causing `$($_.Username)` to render as `$(ÂS_.Username)`.
-
-**Solution:** Rewrote the script using PowerShell here-string syntax to avoid clipboard/keyboard encoding issues.
-
 **Execution policy set:**
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Force
 ```
 
-> 📷 **Screenshot:** PowerShell output showing "Created user: amueller / bschmidt / cweber"
+> **Screenshot:** PowerShell output showing "Created user: amueller / bschmidt / cweber"
 > ![PowerShell Script and CSV](screenshots/18-powershell-script-csv.png)
 
 ---
@@ -282,22 +278,20 @@ Set-ExecutionPolicy RemoteSigned -Force
 | Secure Boot | Enabled (UEFI) |
 | Video Memory | 128 MB |
 
-> 📷 **Screenshot:** VirtualBox WinClient settings — System tab showing TPM 2.0, UEFI, Secure Boot
+>  **Screenshot:** VirtualBox WinClient settings - System tab showing TPM 2.0, UEFI, Secure Boot
 > ![WinClient Desktop](screenshots/12-winclient-desktop.png)
 
 ---
 
 ### Installation Steps
 
-**Problem encountered:** VM configured as 32-bit by default (boot error 0xc000035a).
+ VM configured as 32-bit by default (boot error 0xc000035a) which was wrong. So i changed to Windows 11 (64-bit) in VM General settings.
 
-**Solution:** Changed to Windows 11 (64-bit) in VM General settings.
+Problem encountered is that  Windows 11 rejected disk — no TPM 2.0, no Secure Boot.
 
-**Problem encountered:** Windows 11 rejected disk — no TPM 2.0, RAM < 4 GB, no Secure Boot.
+What i did was to enabled UEFI, TPM 2.0, Secure Boot; reset Secure Boot Keys; increased RAM to 4096 MB.
 
-**Solution:** Enabled UEFI, TPM 2.0, Secure Boot; reset Secure Boot Keys; increased RAM to 4096 MB.
-
-**Problem encountered:** Disk too small (50 GB < 52 GB Windows 11 minimum).
+Another problem as that the disk was  too small (50 GB < 52 GB Windows 11 minimum).
 
 **Solution:**
 ```powershell
@@ -311,7 +305,7 @@ Set-ExecutionPolicy RemoteSigned -Force
 > **Screenshot:** Windows 11 desktop after installation
 > [Screenshot not available — taken during domain join process]
 
-**Snapshot taken:** `WinClient - Fresh Install`
+**At this point again, a new snapshot was taken:** `WinClient - Fresh Install`
 
 ---
 
@@ -328,9 +322,7 @@ Set-ExecutionPolicy RemoteSigned -Force
 
 ### Domain Join
 
-**Problem encountered:** Domain join failed — "DC for lab.local could not be contacted."
-
-**Solution:** Set DNS to 192.168.1.1 (DC01). Domain join succeeded immediately after.
+**The issue that was encountered here is that :** Domain join failed — "DC for lab.local could not be contacted." So i decided to set DNS to 192.168.1.1 (DC01). Domain join succeeded immediately after.
 
 >  **Screenshot:** "Welcome to the lab.local domain" message
 > [Screenshot not available — taken during domain join process]
@@ -396,13 +388,13 @@ Address=192.168.1.50/24
 DNS=192.168.1.1
 ```
 
-**Problem encountered:** Netplan config not applied after reboot — interface stayed DOWN.
+**Problem encountered:** Netplan config not applied after reboot - interface stayed DOWN.
 
 **Root cause:** `/etc/netplan` directory was manually created and not in the correct state; netplan debug showed empty merged config.
 
 **Solution:** Bypassed netplan entirely and used systemd-networkd directly with a `.network` file. Static IP persists across reboots.
 
-**Verified:** `ping 192.168.1.1` from UbuntuServer → DC01 replies confirmed ✅
+**Verified:** `ping 192.168.1.1` from UbuntuServer → DC01 replies confirmed 
 
 >  **Screenshot:** ip a showing 192.168.1.50/24 on enp0s3
 > ![UbuntuServer Static IP](screenshots/16-ubuntuserver-static-ip.png)
