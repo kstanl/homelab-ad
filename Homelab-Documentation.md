@@ -375,9 +375,6 @@ Another problem as that the disk was  too small (50 GB < 52 GB Windows 11 minimu
 
 **Solution:** Deleted corrupted VM, created fresh one.
 
-**Problem encountered:** German keyboard layout prevented typing `/`, `[`, `]`, `:` in Ubuntu.
-
-**Solution:** Ran `sudo loadkeys de` each session.
 
 **Snapshot taken:** `UbuntuServer - Fresh Install`
 
@@ -458,15 +455,12 @@ All VMs on VirtualBox **Internal Network: LabNet**
 | 4 | Wrong AD role installed | AD Certificate Services vs AD Domain Services confusion | Removed wrong role, installed AD DS |
 | 5 | WinClient 32-bit boot error | VM defaulted to 32-bit OS | Changed to Windows 11 (64-bit) |
 | 6 | TPM/Secure Boot/RAM errors | UEFI not enabled, TPM not set, RAM too low | Enabled UEFI, TPM 2.0, Secure Boot; RAM to 4 GB |
-| 7 | Shift+F10 not working | German keyboard layout on laptop | Used Create Partition button in installer instead |
-| 8 | Disk too small for Windows 11 | 50 GB below 52 GB minimum | Resized to 55 GB using VBoxManage |
-| 9 | VBoxManage not in PATH | VirtualBox not added to system PATH | Used full executable path |
-| 10 | No Ethernet adapter in WinClient | Guest Additions not installed | Installed Guest Additions; fixed adapter type |
-| 11 | Domain join failed | DNS not pointing to DC01 | Set static IP with DNS = 192.168.1.1 |
-| 12 | Ubuntu unattended install crashed | No internet; installer tried to fetch packages | Unchecked unattended install option |
-| 13 | Ubuntu disk I/O errors | VDI corruption | Deleted VM, created fresh one |
-| 14 | Can't type `/` `[` `]` in Ubuntu | German QWERTZ keyboard, English layout active | `sudo loadkeys de` each session |
-| 15 | Netplan not applying static IP | Manually created netplan dir not working; empty merged config | Switched to systemd-networkd `.network` file |
-| 16 | Ubuntu login failed initially | Unattended install set unknown credentials | Used manual installer to set known credentials |
-| 17 | `$` character corrupted in scripts | German keyboard encoding in VM | Rewrote script using PowerShell here-string |
-| 18 | `ConvertTo-SecureString` not found | Script ran without valid `$password` variable | Fixed script character encoding |
+| 7 | Disk too small for Windows 11 | 50 GB below 52 GB minimum | Resized to 55 GB using VBoxManage |
+| 8| VBoxManage not in PATH | VirtualBox not added to system PATH | Used full executable path |
+| 9 | No Ethernet adapter in WinClient | Guest Additions not installed | Installed Guest Additions; fixed adapter type |
+| 10 | Domain join failed | DNS not pointing to DC01 | Set static IP with DNS = 192.168.1.1 |
+| 11 | Ubuntu unattended install crashed | No internet; installer tried to fetch packages | Unchecked unattended install option |
+| 12 | Ubuntu disk I/O errors | VDI corruption | Deleted VM, created fresh one |
+| 13 | Netplan not applying static IP | Manually created netplan dir not working; empty merged config | Switched to systemd-networkd `.network` file |
+| 14 | Ubuntu login failed initially | Unattended install set unknown credentials | Used manual installer to set known credentials |
+| 15 | `ConvertTo-SecureString` not found | Script ran without valid `$password` variable | Fixed script character encoding |
