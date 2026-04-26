@@ -348,7 +348,7 @@ Set-ExecutionPolicy RemoteSigned -Force
 ### Domain User Login Test
 
 - Username: `LAB\jdoe` / Password: `User@12345`
-- Login successful ✅
+- Login successful 
 
 >  **Screenshot:** WinClient desktop logged in as LAB\jdoe
 > ![WinClient jdoe Login](screenshots/15-winclient-jdoe-login.png)
@@ -426,21 +426,21 @@ DNS=192.168.1.1
 
 | Component | Status |
 |---|---|
-| VirtualBox Host (Hyper-V off) | ✅ Complete |
-| WinServer VM + Windows Server 2022 | ✅ Complete |
-| DC01 — AD DS, DNS, DHCP | ✅ Complete |
-| AD Users (jdoe, jadoe) | ✅ Complete |
-| WinClient — Windows 11, domain joined | ✅ Complete |
-| Domain user login verified | ✅ Complete |
-| Password Policy GPO | ✅ Complete |
-| PowerShell user provisioning script | ✅ Complete |
-| UbuntuServer — Ubuntu 24.04 installed | ✅ Complete |
-| UbuntuServer static IP (192.168.1.50) | ✅ Complete |
-| Connectivity verified (ping DC01) | ✅ Complete |
-| GitHub repository | ✅ Created |
+| VirtualBox Host (Hyper-V off) |  Complete |
+| WinServer VM + Windows Server 2022 |  Complete |
+| DC01 — AD DS, DNS, DHCP |  Complete |
+| AD Users (jdoe, jadoe) |  Complete |
+| WinClient — Windows 11, domain joined |  Complete |
+| Domain user login verified |  Complete |
+| Password Policy GPO |  Complete |
+| PowerShell user provisioning script |  Complete |
+| UbuntuServer — Ubuntu 24.04 installed |  Complete |
+| UbuntuServer static IP (192.168.1.50) |  Complete |
+| Connectivity verified (ping DC01) | Complete |
+| GitHub repository |  Created |
 | Samba File Server (Ubuntu) | 🔲 Pending |
-| Documentation uploaded to GitHub | 🔲 Pending |
-| Screenshots added to documentation | 🔲 Pending |
+| Documentation uploaded to GitHub | Complete |
+| Screenshots added to documentation | Complete |
 
 
 
