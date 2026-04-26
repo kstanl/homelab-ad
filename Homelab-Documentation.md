@@ -279,7 +279,7 @@ Set-ExecutionPolicy RemoteSigned -Force
 | Video Memory | 128 MB |
 
 >  **Screenshot:** VirtualBox WinClient settings - System tab showing TPM 2.0, UEFI, Secure Boot
-> ![WinClient Desktop](screenshots/12-winclient-desktop.png)
+> [Screenshot not available ]
 
 ---
 
@@ -303,7 +303,7 @@ Another problem as that the disk was  too small (50 GB < 52 GB Windows 11 minimu
 **Solution:** Installed VirtualBox Guest Additions; changed adapter type to Intel PRO/1000 MT Desktop.
 
 > **Screenshot:** Windows 11 desktop after installation
-> [Screenshot not available — taken during domain join process]
+> ![WinClient Desktop](screenshots/12-winclient-desktop.png)
 
 **At this point again, a new snapshot was taken:** `WinClient - Fresh Install`
 
@@ -317,6 +317,14 @@ Another problem as that the disk was  too small (50 GB < 52 GB Windows 11 minimu
 | Subnet Mask | 255.255.255.0 |
 | Default Gateway | 192.168.1.1 |
 | Preferred DNS | 192.168.1.1 |
+
+
+| Preferred DNS | 192.168.1.1 |
+
+> **Screenshot:** IPv4 Properties showing static IP on WinClient
+> ![WinClient Static IP](screenshots/13-winclient-static-ip.png)
+
+---
 
 ---
 
