@@ -427,7 +427,7 @@ DNS=192.168.1.1
 | UbuntuServer static IP (192.168.1.50) |  Complete |
 | Connectivity verified (ping DC01) | Complete |
 | GitHub repository |  Created |
-| Samba File Server (Ubuntu) | 🔲 Pending |
+| Samba File Server (Ubuntu) |  Pending |
 | Documentation uploaded to GitHub | Complete |
 | Screenshots added to documentation | Complete |
 
@@ -463,4 +463,3 @@ All VMs on VirtualBox **Internal Network: LabNet**
 | 12 | Ubuntu disk I/O errors | VDI corruption | Deleted VM, created fresh one |
 | 13 | Netplan not applying static IP | Manually created netplan dir not working; empty merged config | Switched to systemd-networkd `.network` file |
 | 14 | Ubuntu login failed initially | Unattended install set unknown credentials | Used manual installer to set known credentials |
-| 15 | `ConvertTo-SecureString` not found | Script ran without valid `$password` variable | Fixed script character encoding |
